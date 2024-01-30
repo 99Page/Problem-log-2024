@@ -9,10 +9,12 @@
 import SwiftUI
 
 extension View {
-    func customPopup(isPresented: Binding<Bool>) -> some View {
+    func customPopup(isPresented: Binding<Bool>,
+                     buttonTittle: String,
+                     onButtonTapped: @escaping () -> Void) -> some View {
         self
             .fullScreenCover(isPresented: isPresented) {
-                PagePopupView()
+                PagePopupView(buttonText: buttonTittle, onButtonTapped: onButtonTapped)
             }
             .transaction(value: isPresented.wrappedValue) {
                 $0.disablesAnimations = true
