@@ -18,7 +18,7 @@ let target = Target(
     name: "PagePackage",
     platform: .iOS,
     product: .framework,
-    bundleId: "com.page.package",
+    bundleId: "com.page.utils",
     infoPlist: .extendingDefault(with: infoPlist),
     sources: ["Sources/**"],
     dependencies: [
@@ -26,7 +26,7 @@ let target = Target(
     ]
 )
 
-let project = Project(name: "PagePackage",
+let project = Project(name: "PageUtils",
                       organizationName: "page",
                       packages: [
                         .remote(url: "https://github.com/Alamofire/Alamofire.git",
