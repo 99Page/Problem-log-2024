@@ -45,3 +45,9 @@ Single source of truth 및 코드 재사용에서 이점이 크다.
 NavigationPath를 만들 때 사용자가 어떤 값을 넣기를 원하는지 판단해보자.
 
 대부분의 코드에서, 사용자가 사용하기 쉬운 코드를 만들어야한다. 
+
+--- 
+
+기능을 구현할 때 Bottom up으로 접근하면 최종 결과물이 더러워진다. 
+
+큰 구현 사항을 먼저 나누고 Divider & Conquer, Top down 방식으로 접근하자. 
