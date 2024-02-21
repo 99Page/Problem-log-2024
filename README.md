@@ -35,3 +35,6 @@ textViewDidBegingEditing -> textViewDidChangeSelection이고
 이를 허용하고 
 enum 타입의 수를 줄이는 편이 
 Single source of truth 및 코드 재사용에서 이점이 크다. 
+
+
+대부분의 상황에서 가장 중요하게 판단해야할 것은 재사용성인 것 같다. 
