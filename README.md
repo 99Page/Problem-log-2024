@@ -28,3 +28,10 @@ textViewDidBegingEditing -> textViewDidChangeSelection이고
 누른 텍스트의 위치는 textViewDidChangeSelection에서 반영된다.
 
 따라서 textViewDidBegingEditing에서 selectedRange를 변경하면 안된다. 
+
+---
+
+특정 상황에서는 불필요한 case가 있어도 
+이를 허용하고 
+enum 타입의 수를 줄이는 편이 
+Single source of truth 및 코드 재사용에서 이점이 크다. 
