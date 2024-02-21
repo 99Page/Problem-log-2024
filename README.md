@@ -24,5 +24,7 @@
 
 UITextViewDelegate에서 텍스트를 눌렀을 때 호출되는 순서는 
 textViewDidBegingEditing -> textViewDidChangeSelection이고 
+
 누른 텍스트의 위치는 textViewDidChangeSelection에서 반영된다.
+
 따라서 textViewDidBegingEditing에서 selectedRange를 변경하면 안된다. 
