@@ -19,3 +19,10 @@
 2. 다른 서비스 앱들 클론코딩하기(기능없이 디자인 위주로)
 
 어떤 것을 하는게 나을지 사수분들에게 여쭤보자. 
+
+### 02. 21 Wed 
+
+UITextViewDelegate에서 텍스트를 눌렀을 때 호출되는 순서는 
+textViewDidBegingEditing -> textViewDidChangeSelection이고 
+누른 텍스트의 위치는 textViewDidChangeSelection에서 반영된다.
+따라서 textViewDidBegingEditing에서 selectedRange를 변경하면 안된다. 
