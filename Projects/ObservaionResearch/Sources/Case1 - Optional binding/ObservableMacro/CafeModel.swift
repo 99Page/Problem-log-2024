@@ -9,6 +9,16 @@
 import Foundation
 
 @Observable
-final class CafeModel {
-    var text: String = "" 
+final class CafeModel: Hashable, Identifiable {
+    var id = UUID().uuidString
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    static func == (lhs: CafeModel, rhs: CafeModel) -> Bool {
+        lhs.id == rhs.id
+    }
+    
+    var text: String = ""
 }
+
