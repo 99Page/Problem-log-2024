@@ -10,9 +10,12 @@ import SwiftUI
 
 @main
 struct ObservationResearchApp: App {
+    
+    @State private var appleModel = AppleModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(appleModel)
         }
     }
 }

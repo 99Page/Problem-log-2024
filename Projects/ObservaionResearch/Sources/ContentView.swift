@@ -56,6 +56,10 @@ struct ContentView: View {
                         path.append(Path.cafe(cafeModel))
                     }
                 }
+                
+                Section("Envrionment to Bindable") {
+                    AppleView()
+                }
             }
             .navigationDestination(for: Path.self) {
                 $0.destination
