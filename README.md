@@ -107,3 +107,12 @@
 
 * 문제: 개발의 속도를 느리게 하는 것은 예외 처리였고, 어떤 예외 처리가 필요한 지 코드가 흩어져 있어서 파악이 어려웠음
 * 해결: 특정 개발 범위의 예외 처리를 담당하는 타입을 만들어서 어떤 예외들이 있는지 확인하기 쉽게 만듬. 
+
+### 02.29 Thu 
+
+* 문제: 체크박스의 위치를 구하려면, UITextView 내부에 있는 UITextLayoutFragmentView의 minY를 구해야되는데 텍스트 입력 직후 구할 수 없다.
+* R&D: 텍스트 입력 -> UITextViewDelegate.textDidChange() -> UIView.addSubview() -> UIViewRepresentable.updateUIView() -> onChageOf -> textViewportLayoutControllerDidLayout() 순으로 호출되는데
+
+  minY 값을 구할 수 있는 건 마지막 함수 호출 지점.
+  textViewportLayoutControllerDidLayout()를 커스텀하게 만드는 것은 불가능했다.
+* 해결: 텍스트가 입력되면 타이머를 동작시켜서 계속 minY 값을 가져온다. 귀납적으로, 2번 연속 같은 값이면 제대로 가져온 값이다.
