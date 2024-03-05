@@ -142,4 +142,13 @@
 ### 03.04 Mon 
 
 * 문제: 3주동안 만든 텍스트 에디터를 모조리 리팩토링 하고있다.
-* 생각: 클린 코드를 조금 포기하기 하더라도 시간 내에 개발하는 것이 목표였다. 하지만 장기적으로 본다면 기능을 개선하는데 클린 코드가 빠질 수 없다. 시간을 좀 늦추더라도 좋은 설계, 좋은 코드를 작성하는 것이 낫다. 
+* 생각: 클린 코드를 조금 포기하기 하더라도 시간 내에 개발하는 것이 목표였다. 하지만 장기적으로 본다면 기능을 개선하는데 클린 코드가 빠질 수 없다. 시간을 좀 늦추더라도 좋은 설계, 좋은 코드를 작성하는 것이 낫다.
+
+
+### 03.05 Tue 
+
+* 문제: UITextView에서 변경한 attributedString이 textViewDidChange 시점에서 확인해보니 적용이 안되있었다.
+* 해결: updateUIView의 parameter로 들어오는 UIView의 attributedString을 변경한게 아니라 따로 관리하고 있던 UITextView의 atttributedString을 변경하고 있었다.
+  Coordinator의 객체와 UITextView의 객체는 같은 타입이다.
+  그런데 UIView의 변경 내용이 다음 텍스트 변경 시 uiTextView에 적용이 되는 것 같다.
+  따라서 UIView를 변걍해줘야했다. 
