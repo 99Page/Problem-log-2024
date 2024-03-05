@@ -151,4 +151,8 @@
 * 해결: updateUIView의 parameter로 들어오는 UIView의 attributedString을 변경한게 아니라 따로 관리하고 있던 UITextView의 atttributedString을 변경하고 있었다.
   Coordinator의 객체와 UITextView의 객체는 같은 타입이다.
   그런데 UIView의 변경 내용이 다음 텍스트 변경 시 uiTextView에 적용이 되는 것 같다.
-  따라서 UIView를 변걍해줘야했다. 
+  따라서 UIView를 변걍해줘야했다.
+
+
+* 문제: 이니셜라이저에 중복적인 로직이 많이 생겼다.
+* 해결: convenience init을 사용했다. 가독성 측면에서도 유용하다. 
