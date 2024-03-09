@@ -12,10 +12,14 @@ import SwiftUI
 struct ObservationResearchApp: App {
     
     @State private var appleModel = AppleModel()
+    @State private var navigator = Navigator()
+    
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environment(appleModel)
+                .environment(navigator)
         }
     }
 }
