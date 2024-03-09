@@ -14,8 +14,8 @@ struct AppleView: View {
     
     var body: some View {
         VStack {
-            @Bindable var appleModel = appleModel
-            TextField("", text: $appleModel.cellPhone)
+//            @Bindable var appleModel = appleModel
+//            TextField("", text: $appleModel.cellPhone)
         }
     }
 }

@@ -8,26 +8,16 @@
 
 import SwiftUI
 
-enum Path: Hashable {
-    case cafe(CafeModel)
-    
-    @ViewBuilder
-    var destination: some View {
-        switch self {
-        case .cafe(let cafeModel):
-            CafeTextView(cafeModel: cafeModel)
-        }
-    }
-}
-
 struct ContentView: View {
     
-    @State var path = NavigationPath()
+    @Environment(Navigator.self) var navigator
     @Bindable var cafeModel = CafeModel()
     
     
     var body: some View {
-        NavigationStack(path: $path) {
+        @Bindable var navigator = navigator
+        
+        NavigationStack(path: $navigator.path) {
             List {
                 Section("Optional") {
                     NavigationLink("Observable") {
@@ -53,12 +43,18 @@ struct ContentView: View {
                 Section("Navigation") {
                     TextField("current text", text: $cafeModel.text)
                     Button("Navigate to edit text above") {
-                        path.append(Path.cafe(cafeModel))
+                        navigator.path.append(Path.cafe(cafeModel))
                     }
                 }
                 
                 Section("Envrionment to Bindable") {
                     AppleView()
+                }
+                
+                Section("Rendering researh") {
+                    NavigationLink("Without navigation") {
+                        RenderingResearch1View()
+                    }
                 }
             }
             .navigationDestination(for: Path.self) {
