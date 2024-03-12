@@ -187,4 +187,9 @@
 ### 03.11 Mon 
 
 * 문제: DateFormatter 사용하는데 지식이 부족했다.
-* 정리: dateFormatter의 Local은 날짜의 표현 형식, TimeZone은 시차에 영향을 준다. Locale을 적용해도 TimeZone은 바뀌지 않는다. 
+* 정리: dateFormatter의 Local은 날짜의 표현 형식, TimeZone은 시차에 영향을 준다. Locale을 적용해도 TimeZone은 바뀌지 않는다.
+
+### 03.12 Tue 
+
+* 문제: tuist generate를 입력하니까 "Package.resolved file is corrupted or malformed" 에러가 발생했다.
+* 해결: .package.resolved 파일과, .xcworkspace > xcshareddata > swiftpm > Package.resolved를 삭제하니 해결됐다. 
