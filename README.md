@@ -193,3 +193,6 @@
 
 * 문제: tuist generate를 입력하니까 "Package.resolved file is corrupted or malformed" 에러가 발생했다.
 * 해결: .package.resolved 파일과, .xcworkspace > xcshareddata > swiftpm > Package.resolved를 삭제하니 해결됐다. 
+
+* 문제: 뷰가 중첩되는 구조에서 재사용 가능하도록 설계하기 어렵다.
+* 해결: 어렵게 만드는 원인은 background, overlay, button이다. background와 overlay는 분리해서 사용하거나 프로퍼티가 추가적으로 필요하다.
